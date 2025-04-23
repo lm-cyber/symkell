@@ -21,6 +21,9 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- deepseq
+- text
+- text-show
 
 ghc-options:
 - -Wall
@@ -46,6 +49,11 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - symkell
+    - deepseq
+    - text
+    - text-show
+
+
 
 tests:
   symkell-test:
