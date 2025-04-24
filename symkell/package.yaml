@@ -6,62 +6,27 @@ author:              "Author name here"
 maintainer:          "example@example.com"
 copyright:           "2025 Author name here"
 
-extra-source-files:
-- README.md
-- CHANGELOG.md
 
-# Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
 
-# To avoid duplicated efforts in documentation and dealing with the
-# complications of embedding Haddock markup inside cabal files, it is
-# common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/symkell#readme>
+tested-with: GHC == 9.12.1 || == 9.10.1 || == 9.8.4 || == 9.6.6
 
-dependencies:
-- base >= 4.7 && < 5
-- deepseq
-- text
-- text-show
+language: GHC2021
+
+default-extensions:
+- LambdaCase
+- OverloadedStrings
 
 ghc-options:
 - -Wall
-- -Wcompat
-- -Widentities
-- -Wincomplete-record-updates
-- -Wincomplete-uni-patterns
-- -Wmissing-export-lists
-- -Wmissing-home-modules
-- -Wpartial-fields
-- -Wredundant-constraints
+
+dependencies:
+- ad >= 4.5 && < 4.6
+- base >= 4.18 && < 4.22
+- containers >= 0.6 && < 0.8
+- deepseq >= 1.4 && < 1.6
+- text >= 2.0 && < 2.2
+- text-show >= 3.10 && < 3.12
 
 library:
   source-dirs: src
 
-executables:
-  symkell-exe:
-    main:                Main.hs
-    source-dirs:         app
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - symkell
-    - deepseq
-    - text
-    - text-show
-
-
-
-tests:
-  symkell-test:
-    main:                Spec.hs
-    source-dirs:         test
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - symkell
