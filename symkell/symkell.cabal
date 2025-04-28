@@ -24,9 +24,34 @@ source-repository head
 library
   exposed-modules:
       Symkell
+      Symkell.Differentiation
+      Symkell.Integration
+      Symkell.Integration.Exponential
+      Symkell.Integration.Factor
+      Symkell.Integration.Monomial
+      Symkell.Integration.Parts
+      Symkell.Integration.Powers
+      Symkell.Integration.Rational
+      Symkell.Integration.Substitution
+      Symkell.Integration.Sum
+      Symkell.Integration.Term
+      Symkell.Integration.Trigonometric
       Symkell.Numeric
       Symkell.Polynomial
+      Symkell.Polynomial.Differential
+      Symkell.Polynomial.Indexed
+      Symkell.Polynomial.Rational
+      Symkell.Polynomial.Solve
+      Symkell.Polynomial.Symbolic
       Symkell.Symbolic
+      Symkell.Symbolic.Haskell
+      Symkell.Symbolic.LaTeX
+      Symkell.Symbolic.Simplify
+      Symkell.Symbolic.Simplify.AlgebraicRingOrder
+      Symkell.Symbolic.Simplify.Fraction
+      Symkell.Symbolic.Simplify.NumericFolding
+      Symkell.Symbolic.Simplify.SymbolicFolding
+      Symkell.Symbolic.Simplify.Tidy
   other-modules:
       Paths_symkell
   autogen-modules:
