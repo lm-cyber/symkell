@@ -47,6 +47,7 @@ library
       Symkell.Symbolic
       Symkell.Symbolic.Haskell
       Symkell.Symbolic.LaTeX
+      Symkell.Symbolic.Limit
       Symkell.Symbolic.Simplify
       Symkell.Symbolic.Simplify.AlgebraicRingOrder
       Symkell.Symbolic.Simplify.Fraction
@@ -68,6 +69,32 @@ library
     , base >=4.18 && <4.22
     , containers >=0.6 && <0.8
     , deepseq >=1.4 && <1.6
+    , text >=2.0 && <2.2
+    , text-show >=3.10 && <3.12
+  default-language: GHC2021
+
+test-suite symkell-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Symkell.Symbolic.LimitSpec
+      Paths_symkell
+  autogen-modules:
+      Paths_symkell
+  hs-source-dirs:
+      test
+  default-extensions:
+      LambdaCase
+      OverloadedStrings
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck ==2.14.*
+    , ad ==4.5.*
+    , base >=4.18 && <4.22
+    , containers >=0.6 && <0.8
+    , deepseq >=1.4 && <1.6
+    , hspec >=2.7 && <2.12
+    , symkell
     , text >=2.0 && <2.2
     , text-show >=3.10 && <3.12
   default-language: GHC2021

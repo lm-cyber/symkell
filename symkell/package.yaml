@@ -30,3 +30,16 @@ dependencies:
 library:
   source-dirs: src
 
+tests:
+  symkell-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - symkell
+    - hspec >= 2.7 && < 2.12
+    - QuickCheck >= 2.14 && < 2.15
+
