@@ -20,6 +20,7 @@ import Symkell.Symbolic.Haskell (toHaskell)
 import Symkell.Symbolic.LaTeX (toLaTeX)
 import Symkell.Symbolic.Simplify (simplify, simplifyForVariable)
 import Symkell.Symbolic.Simplify.Tidy (tidy)
+import Symkell.Limit (limit)
 
 integrate ::
   Text ->

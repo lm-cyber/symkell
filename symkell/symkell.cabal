@@ -36,6 +36,7 @@ library
       Symkell.Integration.Sum
       Symkell.Integration.Term
       Symkell.Integration.Trigonometric
+      Symkell.Limit
       Symkell.Numeric
       Symkell.Polynomial
       Symkell.Polynomial.Differential
