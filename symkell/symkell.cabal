@@ -24,9 +24,17 @@ source-repository head
 library
   exposed-modules:
       Symkell
+      Symkell.Symbolic
       Symkell.Differentiation
-      Symkell.FFI
       Symkell.Integration
+      Symkell.Limit
+      Symkell.Series
+      Symkell.Symbolic.Simplify
+      Symkell.Symbolic.Haskell
+      Symkell.Symbolic.LaTeX
+      Symkell.Symbolic.Simplify.Tidy
+      Symkell.FFI
+  other-modules:
       Symkell.Integration.Exponential
       Symkell.Integration.Factor
       Symkell.Integration.Monomial
@@ -37,7 +45,6 @@ library
       Symkell.Integration.Sum
       Symkell.Integration.Term
       Symkell.Integration.Trigonometric
-      Symkell.Limit
       Symkell.Numeric
       Symkell.Polynomial
       Symkell.Polynomial.Differential
@@ -45,18 +52,11 @@ library
       Symkell.Polynomial.Rational
       Symkell.Polynomial.Solve
       Symkell.Polynomial.Symbolic
-      Symkell.Series
-      Symkell.Symbolic
-      Symkell.Symbolic.Haskell
-      Symkell.Symbolic.LaTeX
       Symkell.Symbolic.Limit
-      Symkell.Symbolic.Simplify
       Symkell.Symbolic.Simplify.AlgebraicRingOrder
       Symkell.Symbolic.Simplify.Fraction
       Symkell.Symbolic.Simplify.NumericFolding
       Symkell.Symbolic.Simplify.SymbolicFolding
-      Symkell.Symbolic.Simplify.Tidy
-  other-modules:
       Paths_symkell
   autogen-modules:
       Paths_symkell
@@ -65,7 +65,7 @@ library
   default-extensions:
       LambdaCase
       OverloadedStrings
-  ghc-options: -Wall
+  ghc-options: -Wall -shared -fPIC -shared -fPIC
   build-depends:
       ad ==4.5.*
     , base >=4.18 && <4.22
@@ -89,7 +89,7 @@ test-suite symkell-test
   default-extensions:
       LambdaCase
       OverloadedStrings
-  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -shared -fPIC -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck ==2.14.*
     , ad ==4.5.*

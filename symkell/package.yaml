@@ -1,3 +1,4 @@
+# package.yaml
 name:                symkell
 version:             0.1.0.0
 github:              "githubuser/symkell"
@@ -5,8 +6,6 @@ license:             BSD-3-Clause
 author:              "Author name here"
 maintainer:          "example@example.com"
 copyright:           "2025 Author name here"
-
-
 
 tested-with: GHC == 9.12.1 || == 9.10.1 || == 9.8.4 || == 9.6.6
 
@@ -17,7 +16,13 @@ default-extensions:
 - OverloadedStrings
 
 ghc-options:
+
 - -Wall
+- -shared # <= Important: Tells GHC to build a shared object
+- -fPIC
+# Add this for better shared library support if needed, especially on Linux/macOS
+# May not be strictly required depending on Cabal version and target
+# - -dynamic
 
 dependencies:
 - ad >= 4.5 && < 4.6
@@ -29,6 +34,41 @@ dependencies:
 
 library:
   source-dirs: src
+  exposed-modules:
+    - Symkell
+    - Symkell.Symbolic
+    - Symkell.Differentiation
+    - Symkell.Integration
+    - Symkell.Limit
+    - Symkell.Series
+    - Symkell.Symbolic.Simplify
+    - Symkell.Symbolic.Haskell
+    - Symkell.Symbolic.LaTeX
+    - Symkell.Symbolic.Simplify.Tidy
+    # Add the FFI module here
+    - Symkell.FFI
+  ghc-options:
+  # Necessary for building a shared library that can be dynamically loaded
+  - -shared
+  - -fPIC # Position Independent Code, standard for shared libraries
+
+# Optional: Define a foreign library directly for easier building
+# This tells cabal to build a shared library (.so/.dylib/.dll)
+# using the exported functions from Symkell.FFI
+# foreign-library:
+#   type: native-shared
+#   name: symkell-ffi # Base name for the library file
+#   exposed-modules: Symkell.FFI
+#   # You might need to specify Haskell dependencies required by the FFI module
+#   # if they aren't automatically inferred, but usually Cabal handles this.
+#   # other-modules: # Add any internal modules used ONLY by FFI here
+#   # build-depends: base, text, symkell # Example
+#   # Options specifically for the foreign library build
+#   ghc-options:
+#     - -shared
+#     - -fPIC
+#     - -Wall
+#     - -threaded # Important if using Haskell threads
 
 tests:
   symkell-test:
@@ -42,4 +82,3 @@ tests:
     - symkell
     - hspec >= 2.7 && < 2.12
     - QuickCheck >= 2.14 && < 2.15
-
