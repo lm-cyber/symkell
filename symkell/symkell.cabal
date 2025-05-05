@@ -44,6 +44,7 @@ library
       Symkell.Polynomial.Rational
       Symkell.Polynomial.Solve
       Symkell.Polynomial.Symbolic
+      Symkell.Series
       Symkell.Symbolic
       Symkell.Symbolic.Haskell
       Symkell.Symbolic.LaTeX
@@ -77,6 +78,7 @@ test-suite symkell-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Symkell.SeriesSpec
       Symkell.Symbolic.LimitSpec
       Paths_symkell
   autogen-modules:
