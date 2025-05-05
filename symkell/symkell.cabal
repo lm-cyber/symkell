@@ -25,6 +25,7 @@ library
   exposed-modules:
       Symkell
       Symkell.Differentiation
+      Symkell.FFI
       Symkell.Integration
       Symkell.Integration.Exponential
       Symkell.Integration.Factor
