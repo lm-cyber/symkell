@@ -1246,3 +1246,5 @@ dkms.conf
 *.hi
 symkell-ffi-simple.hi
 symkell-ffi-simple.o
+../symkell/autogen-stubs/
+symkell/autogen-stubs/*
