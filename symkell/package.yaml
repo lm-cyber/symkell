@@ -26,37 +26,9 @@ dependencies:
 - deepseq >= 1.4 && < 1.6
 - text >= 2.0 && < 2.2
 - text-show >= 3.10 && < 3.12
-- bytestring    
 
 library:
   source-dirs: src
-  ghc-options:
-    - -stubdir autogen-stubs
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N 
-
-
-foreign-libraries:
-  - name: symkell-ffi  
-    type: native-shared
-    language: C         
-    ghc-options:
-      - -shared         
-      - -dynamic        
-      - -fPIC           
-      - -flink-rts      
-      - -XForeignFunctionInterface 
-      - -o libsymkell-ffi.so
-    exposed-modules:
-      - Symkell.FFI
-    dependencies:
-      - base
-      - symkell       
-      - bytestring    
-      - text          
-
-
 
 tests:
   symkell-test:
@@ -70,4 +42,3 @@ tests:
     - symkell
     - hspec >= 2.7 && < 2.12
     - QuickCheck >= 2.14 && < 2.15
-

@@ -65,11 +65,10 @@ library
   default-extensions:
       LambdaCase
       OverloadedStrings
-  ghc-options: -Wall -stubdir autogen-stubs -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall
   build-depends:
       ad ==4.5.*
     , base >=4.18 && <4.22
-    , bytestring
     , containers >=0.6 && <0.8
     , deepseq >=1.4 && <1.6
     , text >=2.0 && <2.2
@@ -95,7 +94,6 @@ test-suite symkell-test
       QuickCheck ==2.14.*
     , ad ==4.5.*
     , base >=4.18 && <4.22
-    , bytestring
     , containers >=0.6 && <0.8
     , deepseq >=1.4 && <1.6
     , hspec >=2.7 && <2.12
