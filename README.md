@@ -8,11 +8,11 @@ Symkell enables symbolic mathematical operations through a well-structured Haske
 
 ## TODO
 
-- Fix FFI implementation for better interoperability with Python
-- Refactor codebase to improve maintainability and performance
-- Fix and enhance limits computation algorithm
-- Improve Series expansion functionality
-- Implement CI/CD pipeline for automated testing and deployment
+[ ] Fix FFI implementation for better interoperability with Python
+[ ] Refactor codebase to improve maintainability and performance
+[ ] Fix and enhance limits computation algorithm
+[ ] Improve Series expansion functionality
+[ ] Implement CI/CD pipeline for automated testing and deployment
 
 ## Project Structure
 
