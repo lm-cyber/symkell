@@ -16,7 +16,7 @@ import itertools
 #         raise Exception("Could not find " + ending_with_str + " in " + path)
 # so_file_path = find_file_ending_with('libsymkell-ffi.so', '../symkell/.stack-work/dist/x86_64-linux/ghc-9.6.6/build/')
 
-lib = cdll.LoadLibrary("/home/void/symkell/symkell/.stack-work/dist/x86_64-linux/ghc-9.6.6/build/libHSsymkell-0.1.0.0-IW9vRnYO41zFcmJCwRX5gV-ghc9.6.6.so")
+lib = cdll.LoadLibrary("/home/void/symkell/libffi-example.so")
 
 # lib.checkStringHS.argtypes = [c_char_p]
 # lib.checkStringHS.restype = c_char_p

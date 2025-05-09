@@ -15,6 +15,7 @@ language: GHC2021
 default-extensions:
 - LambdaCase
 - OverloadedStrings
+- ForeignFunctionInterface
 
 ghc-options:
 - -Wall
@@ -29,11 +30,20 @@ dependencies:
 
 library:
   source-dirs: src
+  ghc-options:
+    - -stubdir autogen-stubs
+    - -fPIC
+    - -flink-rts
+    - -shared
+    - -dynamic
+
+  exposed-modules:
+    - Symkell
 
 tests:
   symkell-test:
     main: Spec.hs
-    source-dirs: test
+    source-dirs: testg
     ghc-options:
     - -threaded
     - -rtsopts

@@ -23,8 +23,8 @@ source-repository head
 
 library
   exposed-modules:
-      FFI
       Symkell
+  other-modules:
       Symkell.Differentiation
       Symkell.Integration
       Symkell.Integration.Exponential
@@ -56,7 +56,6 @@ library
       Symkell.Symbolic.Simplify.NumericFolding
       Symkell.Symbolic.Simplify.SymbolicFolding
       Symkell.Symbolic.Simplify.Tidy
-  other-modules:
       Paths_symkell
   autogen-modules:
       Paths_symkell
@@ -65,7 +64,8 @@ library
   default-extensions:
       LambdaCase
       OverloadedStrings
-  ghc-options: -Wall
+      ForeignFunctionInterface
+  ghc-options: -Wall -stubdir autogen-stubs -fPIC -flink-rts -shared -dynamic
   build-depends:
       ad ==4.5.*
     , base >=4.18 && <4.22
@@ -79,16 +79,15 @@ test-suite symkell-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Symkell.SeriesSpec
-      Symkell.Symbolic.LimitSpec
       Paths_symkell
   autogen-modules:
       Paths_symkell
   hs-source-dirs:
-      test
+      testg
   default-extensions:
       LambdaCase
       OverloadedStrings
+      ForeignFunctionInterface
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck ==2.14.*
