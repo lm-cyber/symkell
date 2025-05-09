@@ -1,8 +1,12 @@
-
 snapshot: lts-22.43
 
 packages:
-- .
+  - symkell_core
+  - ffi_export_lib
+  
+extra-deps: []
+
+flags: {}
 
 ghc-options:
-  "$everything": -fPIC  -flink-rts 
+  "$everything": -fPIC -flink-rts 

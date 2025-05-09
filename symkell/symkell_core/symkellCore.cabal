@@ -1,0 +1,106 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           symkellCore
+version:        0.1.0.0
+homepage:       https://github.com/githubuser/symkell#readme
+bug-reports:    https://github.com/githubuser/symkell/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2025 Author name here
+license:        BSD-3-Clause
+build-type:     Simple
+tested-with:
+    GHC == 9.12.1 || == 9.10.1 || == 9.8.4 || == 9.6.6
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/symkell
+
+library
+  exposed-modules:
+      Symkell
+      SymkellCore
+  other-modules:
+      FFI
+      Symkell.Differentiation
+      Symkell.Integration
+      Symkell.Integration.Exponential
+      Symkell.Integration.Factor
+      Symkell.Integration.Monomial
+      Symkell.Integration.Parts
+      Symkell.Integration.Powers
+      Symkell.Integration.Rational
+      Symkell.Integration.Substitution
+      Symkell.Integration.Sum
+      Symkell.Integration.Term
+      Symkell.Integration.Trigonometric
+      Symkell.Limit
+      Symkell.Numeric
+      Symkell.Polynomial
+      Symkell.Polynomial.Differential
+      Symkell.Polynomial.Indexed
+      Symkell.Polynomial.Rational
+      Symkell.Polynomial.Solve
+      Symkell.Polynomial.Symbolic
+      Symkell.Series
+      Symkell.Symbolic
+      Symkell.Symbolic.Haskell
+      Symkell.Symbolic.LaTeX
+      Symkell.Symbolic.Limit
+      Symkell.Symbolic.Simplify
+      Symkell.Symbolic.Simplify.AlgebraicRingOrder
+      Symkell.Symbolic.Simplify.Fraction
+      Symkell.Symbolic.Simplify.NumericFolding
+      Symkell.Symbolic.Simplify.SymbolicFolding
+      Symkell.Symbolic.Simplify.Tidy
+      SymkellCore.Limit
+      SymkellCore.Series
+      Paths_symkellCore
+  autogen-modules:
+      Paths_symkellCore
+  hs-source-dirs:
+      src
+  default-extensions:
+      LambdaCase
+      OverloadedStrings
+      ForeignFunctionInterface
+  ghc-options: -Wall -fPIC -flink-rts
+  build-depends:
+      ad ==4.5.*
+    , base >=4.18 && <4.22
+    , containers >=0.6 && <0.8
+    , deepseq >=1.4 && <1.6
+    , text >=2.0 && <2.2
+    , text-show >=3.10 && <3.12
+  default-language: GHC2021
+
+test-suite symkell-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Symkell.SeriesSpec
+      Symkell.Symbolic.LimitSpec
+      Paths_symkellCore
+  autogen-modules:
+      Paths_symkellCore
+  hs-source-dirs:
+      test
+  default-extensions:
+      LambdaCase
+      OverloadedStrings
+      ForeignFunctionInterface
+  ghc-options: -Wall -fPIC -flink-rts -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck ==2.14.*
+    , ad ==4.5.*
+    , base >=4.18 && <4.22
+    , containers >=0.6 && <0.8
+    , deepseq >=1.4 && <1.6
+    , hspec >=2.7 && <2.12
+    , text >=2.0 && <2.2
+    , text-show >=3.10 && <3.12
+  default-language: GHC2021
