@@ -24,6 +24,7 @@ source-repository head
 library
   exposed-modules:
       Symkell
+      FFI
   other-modules:
       Symkell.Differentiation
       Symkell.Integration
@@ -65,10 +66,9 @@ library
       LambdaCase
       OverloadedStrings
       ForeignFunctionInterface
-  ghc-options: -Wall -stubdir autogen-stubs -fPIC -flink-rts -shared -dynamic
+  ghc-options: -Wall
   build-depends:
       ad ==4.5.*
-    , base >=4.18 && <4.22
     , containers >=0.6 && <0.8
     , deepseq >=1.4 && <1.6
     , text >=2.0 && <2.2
@@ -92,7 +92,6 @@ test-suite symkell-test
   build-depends:
       QuickCheck ==2.14.*
     , ad ==4.5.*
-    , base >=4.18 && <4.22
     , containers >=0.6 && <0.8
     , deepseq >=1.4 && <1.6
     , hspec >=2.7 && <2.12

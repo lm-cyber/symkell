@@ -1,0 +1,1 @@
+ghc --make -c -dynamic -fPIC -isrc $(find src -name '*.hs')

@@ -4,3 +4,5 @@ snapshot: lts-22.43
 packages:
 - .
 
+ghc-options:
+  "$everything": -fPIC  -flink-rts 

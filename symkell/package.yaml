@@ -22,7 +22,7 @@ ghc-options:
 
 dependencies:
 - ad >= 4.5 && < 4.6
-- base >= 4.18 && < 4.22
+# - base >= 4.18 && < 4.22
 - containers >= 0.6 && < 0.8
 - deepseq >= 1.4 && < 1.6
 - text >= 2.0 && < 2.2
@@ -30,15 +30,15 @@ dependencies:
 
 library:
   source-dirs: src
-  ghc-options:
-    - -stubdir autogen-stubs
-    - -fPIC
-    - -flink-rts
-    - -shared
-    - -dynamic
-
   exposed-modules:
-    - Symkell
+  - Symkell
+  - FFI
+  # ghc-options:
+  #   - -shared 
+  #   - -dynamic 
+  #   - -fPIC  
+  #   - -flink-rts 
+
 
 tests:
   symkell-test:
