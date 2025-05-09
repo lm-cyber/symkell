@@ -6,6 +6,14 @@ Symkell is a symbolic mathematics library written in Haskell with Python binding
 
 Symkell enables symbolic mathematical operations through a well-structured Haskell core with FFI bindings to make the functionality accessible from Python. The project is designed for researchers, educators, and developers working with symbolic mathematics.
 
+## TODO
+
+- Fix FFI implementation for better interoperability with Python
+- Refactor codebase to improve maintainability and performance
+- Fix and enhance limits computation algorithm
+- Improve Series expansion functionality
+- Implement CI/CD pipeline for automated testing and deployment
+
 ## Project Structure
 
 - **symkell_core**: The Haskell core library implementing symbolic mathematics operations
@@ -65,6 +73,7 @@ Symkell uses a multi-step approach for computing limits:
 3. **Recursive Methods**
    - Term-wise limit computation when possible
    - Algebraic simplifications for resolving indeterminacies
+
 
 ## Installation
 
